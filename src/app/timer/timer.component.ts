@@ -12,29 +12,33 @@ export class TimerComponent implements OnInit {
   
   ngOnInit(): void {
     let travail = true;
-    let tempsTravail = 60 * 25;
+    let tempsTravail = 60;
     let tempsPause = 60 * 5
     let display = <HTMLVideoElement>document.querySelector('#time');
     let startTimer = () => {
       if(travail) {
-        setInterval ( () => {
+        let timerTravail = setInterval ( () => {
           let minutes = Math.floor(tempsTravail / 60);
           let secondes = tempsTravail % 60;
-          minutes < 10 ? '0' + minutes : minutes;
-          secondes < 10 ? '0' + secondes : secondes;
-          display.textContent = minutes + ":" + secondes;
+          let valueMinutes = minutes < 10 ? '0' + minutes : minutes;
+          let valueSecondes = secondes < 10 ? '0' + secondes : secondes;
+          display.textContent = valueMinutes + ":" + valueSecondes;
           if (--tempsTravail < 0) {
+            clearInterval(timerTravail);
             travail = false;
+            startTimer();
           }
         },1000);
       }
       else {
-        setInterval ( () => {
-          let minutes = tempsPause / 60;
+        let timerPause = setInterval ( () => {
+          let minutes = Math.floor(tempsPause / 60);
           let secondes = tempsPause % 60;  
           display.textContent = minutes + ":" + secondes;
           if (--tempsPause < 0) {
+            clearInterval(timerPause);
             travail = true;
+            startTimer();
           }
         },1000);
       }
