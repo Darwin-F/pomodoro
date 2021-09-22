@@ -12,38 +12,33 @@ export class TimerComponent implements OnInit {
   
   ngOnInit(): void {
     let travail = true;
-    let tempsTravail = 60;
-    let tempsPause = 60 * 5
+    let compteur = 0;
+    let temps = 0;
     let display = <HTMLVideoElement>document.querySelector('#time');
-    let startTimer = () => {
-      if(travail) {
-        let timerTravail = setInterval ( () => {
-          let minutes = Math.floor(tempsTravail / 60);
-          let secondes = tempsTravail % 60;
-          let valueMinutes = minutes < 10 ? '0' + minutes : minutes;
-          let valueSecondes = secondes < 10 ? '0' + secondes : secondes;
-          display.textContent = valueMinutes + ":" + valueSecondes;
-          if (--tempsTravail < 0) {
-            clearInterval(timerTravail);
-            travail = false;
-            startTimer();
-          }
-        },1000);
-      }
-      else {
-        let timerPause = setInterval ( () => {
-          let minutes = Math.floor(tempsPause / 60);
-          let secondes = tempsPause % 60;  
-          display.textContent = minutes + ":" + secondes;
-          if (--tempsPause < 0) {
-            clearInterval(timerPause);
-            travail = true;
-            startTimer();
-          }
-        },1000);
-      }
+    if(travail) {
+      temps = 60;
+    }else if (!travail && compteur < 4) {
+      temps = 60 * 5;
     }
-    startTimer();
+    else {
+      temps = 60 * 15;
+    }
+    let timerTravail = setInterval ( () => {
+      
+      let minutes = Math.floor(temps / 60);
+      let secondes = temps % 60;
+      let valueMinutes = minutes < 10 ? '0' + minutes : minutes;
+      let valueSecondes = secondes < 10 ? '0' + secondes : secondes;
+      console.log(valueMinutes + ":" + valueSecondes);
+      display.textContent = valueMinutes + ":" + valueSecondes;
+      if (--temps < 0) {
+        clearInterval(timerTravail);
+        travail = !travail;
+        compteur++;
+        timerTravail;
+      }
+        },1000);
+    timerTravail;
   } 
 }
 
