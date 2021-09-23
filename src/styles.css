@@ -1,12 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; display: flex;justify-content: center; align-items: center;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; display: flex;justify-content: center; align-items: center; background-color: #581845; color: blanchedalmond;}
 .block {
     width: 500px;
     height: 500px;
-    background-color: blanchedalmond;
-    box-shadow: blanchedalmond;
+    background-color: #c7053c;
+    box-shadow: 0px 0px 5px #fa1758;
     border-radius: 20px;
 }
 
