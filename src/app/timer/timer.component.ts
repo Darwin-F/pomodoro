@@ -57,7 +57,6 @@ export class TimerComponent implements OnInit {
           let secondes = temps % 60;
           let valueMinutes = minutes < 10 ? '0' + minutes : minutes;
           let valueSecondes = secondes < 10 ? '0' + secondes : secondes;
-          console.log(valueMinutes + ":" + valueSecondes);
           display.textContent = valueMinutes + ":" + valueSecondes;
           if (--temps < 0) {
             clearInterval(timerTravail);

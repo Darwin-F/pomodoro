@@ -1,0 +1,12 @@
+.form {
+    margin: auto;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 610px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }

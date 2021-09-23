@@ -6,17 +6,22 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { TimerComponent } from './timer/timer.component';
+import { TasksComponent } from './tasks/tasks.component';
+
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TimerComponent
+    TimerComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
