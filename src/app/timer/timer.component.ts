@@ -14,7 +14,7 @@ export class TimerComponent implements OnInit {
     let timerTravail : ReturnType<typeof setInterval>;
     let travail = true;
     let compteur = 0;
-    let temps = 60;
+    let temps = 60 * 25;
     let display = <HTMLVideoElement>document.querySelector('#time');
     let isPaused = false;
     let buttonPaused = document.querySelector('#pause');
