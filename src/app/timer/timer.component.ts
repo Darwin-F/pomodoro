@@ -31,7 +31,7 @@ export class TimerComponent implements OnInit {
       clearInterval(timerTravail);
       compteur = 0;
       travail = true;
-      temps = 60;
+      temps = 60 * 25;
       start(temps);
     });
     function nextStep() {
