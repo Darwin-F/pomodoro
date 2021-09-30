@@ -9,6 +9,6 @@
 </div>
 <div>
   <mat-list>
-    <mat-list-item *ngFor="let task of taskList">{{ task }} </mat-list-item>
+    <mat-list-item *ngFor="let task of taskList">{{ task }} <mat-checkbox (click)="done(task)"></mat-checkbox> </mat-list-item>
   </mat-list>
 </div>

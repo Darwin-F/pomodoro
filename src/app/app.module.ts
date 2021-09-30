@@ -10,6 +10,7 @@ import { TasksComponent } from './tasks/tasks.component';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MatListModule } from '@angular/material/list';
     BrowserAnimationsModule,
     MatSliderModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

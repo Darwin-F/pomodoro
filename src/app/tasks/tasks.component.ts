@@ -10,6 +10,11 @@ export class TasksComponent implements OnInit {
   constructor() { }
   
   public taskList : string[] = [];
+  done(task : string) : void {
+    console.log(task);
+    this.taskList = this.taskList.filter(value => value != task);
+    console.log(this.taskList);
+  }
   
   ngOnInit(): void {
     let task = <HTMLInputElement>document.querySelector('#tasks_input');

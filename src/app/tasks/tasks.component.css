@@ -10,3 +10,11 @@
   .example-full-width {
     width: 100%;
   }
+mat-checkbox {
+  margin-left: auto;
+}
+mat-list-item {
+  background-color: blanchedalmond;
+  border-radius: 5px;
+  margin: 5px;
+}
