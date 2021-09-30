@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tasks',
@@ -8,25 +8,20 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TasksComponent implements OnInit {
 
   constructor() { }
-
+  
+  public taskList : string[] = [];
+  
   ngOnInit(): void {
     let task = <HTMLInputElement>document.querySelector('#tasks_input');
     
     let submit = document.querySelector('#formulaire');
-
-    function loadTask(task:string){
-      let tasks = document.createElement('mat-list-item');
-      tasks.textContent = task;
-      tasks.className = "";
-      document.getElementById('list')?.append(tasks);
-    }
 
     submit?.addEventListener('submit',(e) => {
       e.preventDefault();
       if(task.value == '') {
         task.style.borderColor='red';
       }else {
-        loadTask(task.value);
+        this.taskList.push(task.value);
         task.value = '';
       }
     });

@@ -7,6 +7,10 @@
     padding: 15px;
 }
 
+h1 {
+    font-size: xx-large;
+}
+
 button {
     margin: 25px;
     width: 150px;
@@ -21,7 +25,7 @@ button {
     margin: 20px;
 }
 #image {
-    margin: 40px;
+    margin: 5px;
 }
 img {
     margin: 5px;
